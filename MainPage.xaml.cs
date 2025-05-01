@@ -1,4 +1,8 @@
-﻿namespace zaraga.weather;
+﻿using System;
+using Microsoft.Maui.Accessibility;
+using Microsoft.Maui.Controls;
+
+namespace zaraga.weather;
 
 public partial class MainPage : ContentPage
 {
@@ -19,5 +23,7 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         SemanticScreenReader.Announce(CounterBtn.Text);
+
+        App.Console.Write($"Clicked {count} times");
     }
 }
