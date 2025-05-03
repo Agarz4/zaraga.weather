@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>net8.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
         
         <OutputType>Exe</OutputType>
         <RootNamespace>zaraga.weather</RootNamespace>
@@ -42,13 +43,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+		<PackageReference Condition="$([MSBuild]::IsOSPlatform('android'))" Include="zaraga.logger" Version="1.3.0" />
+		<PackageReference Condition="$([MSBuild]::IsOSPlatform('windows'))" Include="zaraga.logger" Version="1.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\zaraga.logger\zaraga.logger\zaraga.logger.csproj" />
+      <ProjectReference Include="..\zaraga.apiclient\zaraga.apiclient.csproj" />
     </ItemGroup>
 
 </Project>
