@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.weather", "zaraga.weather\zaraga.weather.csproj", "{79C49D41-F789-5348-4E3C-B6090C0769B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.apiclient", "zaraga.apiclient\zaraga.apiclient.csproj", "{FFF15792-57F8-48FC-88E2-73B0E4FE853D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.api", "zaraga.apiclient\zaraga.api.csproj", "{FFF15792-57F8-48FC-88E2-73B0E4FE853D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

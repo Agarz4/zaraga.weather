@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.Maui.Accessibility;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
+using zaraga.weather.Attributes;
 
 namespace zaraga.weather;
 
@@ -11,6 +14,13 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        lblTitle.Text = $"{App.WeatherApikey}";
     }
 
     private void OnCounterClicked(object sender, EventArgs e)

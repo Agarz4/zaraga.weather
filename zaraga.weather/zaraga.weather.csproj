@@ -22,6 +22,9 @@
         <ApplicationVersion>1</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+
+		<!--msbuild properties-->
+		<WeatherApiKey>WeatherApiKey</WeatherApiKey>
     </PropertyGroup>
 
     <ItemGroup>
@@ -51,7 +54,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\zaraga.apiclient\zaraga.apiclient.csproj" />
+      <ProjectReference Include="..\zaraga.apiclient\zaraga.api.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Services\" />
+      <Folder Include="Pages\" />
+    </ItemGroup>
+
+	<!--Custom Properties-->
+	<ItemGroup>
+		<AssemblyAttribute Include="zaraga.weather.Attributes.WeatherApiKeyAttribute">
+			<_Parameter1>"$(WeatherApiKey)"</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	
 </Project>
