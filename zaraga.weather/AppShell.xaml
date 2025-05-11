@@ -5,11 +5,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:zaraga.weather"
     Shell.FlyoutBehavior="Disabled"
+    xmlns:about="clr-namespace:zaraga.weather.Pages.About"
+    xmlns:favorites="clr-namespace:zaraga.weather.Pages.Favorites"
+    xmlns:home="clr-namespace:zaraga.weather.Pages.Home"
+    xmlns:settings="clr-namespace:zaraga.weather.Pages.Settings"
     Title="zaraga.weather">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Inicio">
+            <ShellContent ContentTemplate="{DataTemplate home:HomePage}"></ShellContent>
+        </Tab>
+        <Tab Title="Favoritos">
+            <ShellContent ContentTemplate="{DataTemplate favorites:FavoritesPage}"></ShellContent>
+        </Tab>
+        <Tab Title="App">
+            <ShellContent Title="Ajustes" ContentTemplate="{DataTemplate settings:SettingsPage}"></ShellContent>
+            <ShellContent Title="Acerca De" ContentTemplate="{DataTemplate about:AboutPage}"></ShellContent>
+        </Tab>
+    </TabBar>
 
 </Shell>
