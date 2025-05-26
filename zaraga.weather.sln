@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.weather", "zaraga.we
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.api", "zaraga.apiclient\zaraga.api.csproj", "{FFF15792-57F8-48FC-88E2-73B0E4FE853D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zaraga.devicefeatures", "zaraga.devicefeatures\zaraga.devicefeatures.csproj", "{9F098807-FAD5-48E6-8096-B6C251483F74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{FFF15792-57F8-48FC-88E2-73B0E4FE853D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF15792-57F8-48FC-88E2-73B0E4FE853D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF15792-57F8-48FC-88E2-73B0E4FE853D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F098807-FAD5-48E6-8096-B6C251483F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F098807-FAD5-48E6-8096-B6C251483F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F098807-FAD5-48E6-8096-B6C251483F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F098807-FAD5-48E6-8096-B6C251483F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

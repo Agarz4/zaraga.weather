@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="zaraga.weather.Pages.Home.HomePage"  
-             xmlns:progress="clr-namespace:Plugin.Maui.MauiProgressView;assembly=Plugin.Maui.MauiProgressView"
-             Title="HomePage">
+<ContentPage
+    x:Class="zaraga.weather.Pages.Home.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:zaraga.weather.Pages.Home"
+    xmlns:views="clr-namespace:zaraga.weather.Views"
+    Title="HomePage">
+
     <VerticalStackLayout Padding="30" Spacing="20">
         <Image
-     Aspect="AspectFit"
-     HeightRequest="185"
-     SemanticProperties.Description="dot net bot in a race car number eight"
-     Source="dotnet_bot.png" />
-        
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Aspect="AspectFit"
+            HeightRequest="185"
+            SemanticProperties.Description="dot net bot in a race car number eight"
+            Source="dotnet_bot.png" />
 
-        <progress:ProgressBarView
-                    BarHeight="50"
-                    CornerRadius="0"
-                    HeightRequest="120"
-                    Maximum="1"
-                    Minimum="0"
-                    Outline="True"
-                    OutlineColor="LightGray"
-                    OutlineThickness="10"
-                    Progress="0.5"
-                    ProgressColor="CornflowerBlue"
-                    ProgressType="Striped" />
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding CurrentCity}"
+            VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GetGurrentWeatherCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <views:LoadingView IsVisible="{Binding IsLoading}" />
+
+
     </VerticalStackLayout>
 </ContentPage>

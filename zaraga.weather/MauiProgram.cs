@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using epj.ProgressBar.Maui;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using SkiaSharp.Views.Maui.Controls.Hosting;
