@@ -1,14 +1,25 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:zaraga.weather"
-             x:Class="zaraga.weather.App">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="zaraga.weather.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:zaraga.weather"
+    xmlns:views="clr-namespace:zaraga.weather.Views">
     <Application.Resources>
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <ControlTemplate x:Key="LoadingContentPage">
+                <VerticalStackLayout VerticalOptions="Fill">
+                    <views:LoadingView IsVisible="{TemplateBinding ShowLoadingBar}" />
+                    <ContentPresenter HorizontalOptions="Fill" VerticalOptions="Fill" />
+                </VerticalStackLayout>
+            </ControlTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
