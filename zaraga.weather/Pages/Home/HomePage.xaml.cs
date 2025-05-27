@@ -5,10 +5,11 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using zaraga.weather.Models;
 using zaraga.weather.Services;
+using zaraga.weather.Layouts;
 
 namespace zaraga.weather.Pages.Home;
 
-public partial class HomePage : ContentPage
+public partial class HomePage : LoadingContentPage
 {
     HomeViewModel? viewModel;
 

@@ -9,10 +9,6 @@ namespace zaraga.weather.Pages.Home;
 internal class HomeViewModel : SharedViewModel
 {
     private string _currentCity = "";
-    private bool _isLoading = false;
-
-
-    public bool IsLoading { get => _isLoading; set { _isLoading = value; OnPropertyChanged(); } }
     public string CurrentCity { get => _currentCity; set { _currentCity = value; OnPropertyChanged(); } }
 
 

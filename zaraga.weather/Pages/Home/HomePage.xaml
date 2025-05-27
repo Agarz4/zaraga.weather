@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<layouts:LoadingContentPage
     x:Class="zaraga.weather.Pages.Home.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:layouts="clr-namespace:zaraga.weather.Layouts"
     xmlns:local="clr-namespace:zaraga.weather.Pages.Home"
     xmlns:views="clr-namespace:zaraga.weather.Views"
-    Title="HomePage">
+    x:Name="page"
+    Title="HomePage"
+    ShowLoadingBar="{Binding Source={x:Reference page}, Path=BindingContext.IsLoading}">
 
     <VerticalStackLayout Padding="30" Spacing="20">
         <Image
@@ -23,8 +26,6 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <views:LoadingView IsVisible="{Binding IsLoading}" />
-
 
     </VerticalStackLayout>
-</ContentPage>
+</layouts:LoadingContentPage>
